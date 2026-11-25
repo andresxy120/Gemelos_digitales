@@ -1,0 +1,22 @@
+﻿campo,tipo,interpretacion,momento_disponibilidad
+id_ot,string,"Identificador único, unión de tablas",Origen anonimizado
+fecha_hora_recibo,datetime,Recepción de OT,Entrada conocida
+fecha_programacion,date,Fecha del snapshot de planificación,Entrada conocida
+especialidad_requerida,category,Compatibilidad estricta con especialidad de cuadrilla,Entrada conocida
+subzona,category,Zona de trabajo,Entrada conocida
+tipo_direccion,category,URBANO/RURAL,Entrada conocida
+tipo_trabajo,category,Tipo de trabajo,Entrada conocida
+actividad,category,Código de actividad,Entrada conocida
+dias_restantes_ans,integer,Días hábiles restantes según snapshot; puede ser negativo,Entrada conocida
+estado_ans_programacion,category,A_TIEMPO/ALERTA/ALERTA_0_DIAS/VENCIDO,Entrada conocida
+tiempo_target_min,integer,Duración planificada nominal; no es tiempo observado,Entrada conocida
+complejidad_sintetica,category,Complejidad definida por generador original,Entrada conocida
+prioridad_proxy_0_100,integer,"Supuesto pedagógico: complejidad (25/55/85) + 8 rural + 5 medida especial, truncado a 100; NO prioridad real",Variable agregada sintética
+apta_programacion,binary,1 solo si VIABLE; restricciones adicionales no modeladas,Variable derivada
+anio_programacion,integer,"2025 calibración, 2026 evaluación temporal",Variable derivada
+id_cuadrilla,string,Cuadrilla asignada históricamente,Resultado posterior
+tiempo_servicio_real_min,float,Tiempo observado sintético de servicio; sólo calibración/evaluación,Resultado posterior
+tiempo_desplazamiento_min,float,Tiempo observado sintético de traslado; sólo calibración/evaluación,Resultado posterior
+incidente,binary,Incidente observado; sólo calibración/evaluación,Resultado posterior
+incumple_ans,binary,"Incumplimiento observado, NO fuga de datos al programar",Resultado posterior
+costo_estimado_cop,float,Costo modelado históricamente; no usar como atributo predecible,Resultado posterior
